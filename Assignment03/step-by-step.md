@@ -50,13 +50,13 @@ You can later restart the container by entering the following command:
 docker start dtc-rabbitmq
 ```
 
-Later on, when you're dong with this class, you can remove the running container by entering the following command:
+Later on, when you're done with this class, you can remove the running container by entering the following command:
 
 ```console
 docker rm dtc-rabbitmq -f
 ```
 
-Warning: Once you remove container, it's gone. To use it, again, you'll need to start over with the `docker run` command shown at the beginning of this step.
+Warning: Once you remove the container, it's gone. To use it, again, you'll need to start over with the `docker run` command shown at the beginning of this step.
 
 > For your convenience, the `src/Infrastructure` folder contains Powershell scripts for starting the infrastructural components you'll use throughout the workshop. invoke the `src/Infrastructure/rabbitmq/start-rabbitmq.ps1` script to start the RabbitMQ container.
 >
@@ -175,7 +175,7 @@ You are going to prepare the FineCollectionService so that it can receive messag
 
    The `route` field tells Dapr to forward messages published to the `collectfine` topic to the `/collectfine` endpoint. From there, the subscriber can handle each message. The `pubsubname` links the subscription.yaml file to the `pubsub` component. The `scopes` field restricts this subscription to only the service with the `finecollectionservice` app-id.
 
-Now the FineCollectionService is ready to receive published messages through Dapr. But there is a catch! Dapr warps pub/sub messages inside the open-source [CloudEvents](https://cloudevents.io/) message format. Upon receipt, the subscriber must transform the message to a `CloudEvent`. You'll start by manually parsing the incoming JSON. Later, you'll evolve the implementation to use the ASP.NET Core model binding via the Dapr SDK for .NET.
+Now the FineCollectionService is ready to receive published messages through Dapr. But there is a catch! Dapr wraps pub/sub messages inside the open-source [CloudEvents](https://cloudevents.io/) message format. Upon receipt, the subscriber must transform the message to a `CloudEvent`. You'll start by manually parsing the incoming JSON. Later, you'll evolve the implementation to use the ASP.NET Core model binding via the Dapr SDK for .NET.
 
  > CloudEvents is a standardized messaging format, providing a common way to describe event information across platforms. Dapr embraces CloudEvents. For more information about CloudEvents, see the cloudevents specification
 
