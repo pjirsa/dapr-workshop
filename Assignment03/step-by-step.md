@@ -237,7 +237,7 @@ You're going to start the application, service-by-service. While doing so, you'l
 1. Look for the following output:
    > *You're up and running! Both Dapr and your app logs will appear here.*
 
-1. Next, you'll start the FineCollecitonService: 
+1. Next, you'll start the FineCollectionService: 
 
    <img src="../img/start-finecollection.png" style="padding-top: 25px;" />
 
